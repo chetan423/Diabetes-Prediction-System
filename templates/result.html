@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+    <style>
+        /* Basic reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Background styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-image: linear-gradient(to right, #d3e0ea, #f9f9f9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            color: #333;
+            padding: 20px;
+        }
+
+        /* Container styles */
+        .container {
+            background: #ffffff;
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            max-width: 700px;
+            width: 100%;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .container:hover {
+            transform: scale(1.05);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            color: #004d99;
+            font-size: 30px;
+            margin-bottom: 25px;
+        }
+
+        .recommendation-box {
+            background-color: #e0f7fa; /* Light blue background */
+            color: #004d99; /* Dark blue text */
+            padding: 25px;
+            border-radius: 15px;
+            margin-top: 25px;
+            font-size: 18px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .prediction-level {
+            font-weight: bold;
+            font-size: 22px;
+            color: #003366;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 15px 25px;
+            background-color: #004d99;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 10px;
+            font-size: 18px;
+            transition: background-color 0.3s ease;
+        }
+
+        a:hover {
+            background-color: #003366;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Diabetes Prediction Result</h1>
+        <p class="prediction-level">Prediction Level: {{ prediction }}</p>
+        <div class="recommendation-box">
+            Recommendation: {{ recommendation | safe }}
+        </div>
+        <a href="/">Predict again</a>
+    </div>
+</body>
+</html>
